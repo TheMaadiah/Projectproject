@@ -32,7 +32,7 @@ window.onload = function() {
 const videos = [
   {
     title: "Big Hero 6 (2014)",
-    src: "BIG HERO 6 _ UK Teaser Trailer _ Official Disney UK.mp4",
+    src: "BIG HERO 6 _ UK Teaser Trailer _ Official Disney UK.mp4", type: "video/mp4",
     desc: "A young robotics prodigy, Hiro, teams up with an inflatable robot, Baymax, and friends to stop a mysterious villain in San Fransokyo.",
     cast: `<li>Ryan Potter</li>
   <li>Scott Adsit</li>
@@ -45,7 +45,7 @@ const videos = [
   },
   {
     title: "Lego Batman (2013)",
-    src: "LEGO Batman_ The Movie - Trailer.mp4",
+    src: "LEGO Batman_ The Movie - Trailer.mp4", type: "video/mp4",
     desc: "Batman learns to work with others to save Gotham City from the Joker and other villains in a chaotic Lego world.",
     cast: `<li>Will Arnett</li>
     <li>Michael Cera</li>
@@ -55,7 +55,7 @@ const videos = [
   },
   {
     title: "Monsters, Inc. (2001)",
-    src: "Monsters, Inc. 3D Trailer.mp4",
+    src: "Monsters, Inc. 3D Trailer.mp4", type: "video/mp4",
     desc: "Two monsters, Sulley and Mike, uncover a conspiracy in the scream-powered city while protecting a little girl, Boo.",
     cast: `<li>Billy Crystal</li>
   <li>John Goodman</li>
