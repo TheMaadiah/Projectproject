@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transient Theatre | Movies</title>
+  <link rel="stylesheet" href="theatre.css">
+  <link rel="shortcut icon" href="transient.png">
+</head>
+<body>
+  <h2>Movies</h2>
+  <ul id="nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="movie.html">Movies</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="submit.html">Submit</a></li>
+  </ul>
+
+  <div id="container">
+    <video id="vid" width="600"></video>
+    <button id="prevbtn">&lAarr;</button><button id="nextbtn">&rAarr;</button>
+    
+    <h2 id="title"></h2>
+    <p id="desc"></p>
+    <h3>Cast:</h3>
+    <ul id="cast"></ul>
+    <b><i id="genre"></i></b>
+  </div>
+  
+  <button id="maxbtn">Max</button>
+  <button id="minbtn">Min</button>
+  <button id="playbtn">Play</button>
+  <button id="mutebtn">Mute</button>
+  <label for="vol"> Volume</label>
+  <input type="range" id="vol">
+
+  <script src="theatre.js"></script>
+</body>
+</html>

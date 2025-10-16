@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transient Theatre | Music</title>
+  <link rel="stylesheet" href="theatre.css">
+  <link rel="shortcut icon" href="transient.png">
+</head>
+<body>
+  <h2>Music Player</h2>
+
+  <ul id="nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="movie.html">Movies</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="submit.html">Submit</a></li>
+  </ul>
+
+  
+
+  <audio id="music"></audio>
+<img id="cover" src="" alt="Album Cover" width="400" height="300">
+  <div><p><b>Title:</b> <span id="title"></span></p>
+  <p><b>Artist:</b> <span id="artist"></span></p>
+  <p><b>Album:</b> <span id="album"></span></p>
+  <p><b>Genre:</b> <span id="genre"></span></p>
+  <p><b>Year:</b> <span id="year"></span></p></div>
+
+
+  <br><br>
+
+  <!-- ✅ Added Prev / Next Buttons -->
+  <button id="prev">Prev</button>
+  <button id="play">Play</button>
+  <button id="mute">Mute</button>
+  <button id="next">Next</button>
+  <label for="vol"> Volume</label>
+  <input type="range" id="vol" min="0" max="100" value="20">
+
+  <script>
+    const songs = [
+  {
+    title: "Talking To The Moon",
+    artist: "Bruno Mars",
+    album: "Doo-Wops & Hooligans",
+    genre: "Pop / Ballad",
+    year: "2010",
+    src: "Bruno Mars - Talking To The Moon (Official Lyric Video) [fXw0jcYbqdo].mp3",
+    cover: "talking_to_the_moon.jpg"
+  },
+  {
+    title: "Bam Bam",
+    artist: "Camila Cabello ft. Ed Sheeran",
+    album: "Familia",
+    genre: "Pop / Latin",
+    year: "2022",
+    src: "Camila Cabello - Bam Bam (Lyrics) ft. Ed Sheeran [mXbYnQfiihg].mp3",
+    cover: "bam_bam.jpg"
+  },
+  {
+    title: "Galway Girl",
+    artist: "Ed Sheeran",
+    album: "Divide (÷)",
+    genre: "Folk / Pop",
+    year: "2017",
+    src: "Ed Sheeran - Galway Girl [Official Lyric Video] [XjHr-6Zl5P8].mp3",
+    cover: "galway_girl.jpg"
+  },
+  {
+    title: "Wow (Remix)",
+    artist: "Post Malone ft. Roddy Ricch & Tyga",
+    album: "Wow. Remix (Single)",
+    genre: "Hip-Hop / Rap",
+    year: "2020",
+    src: "Post Malone - _Wow._ Remix feat. Roddy Ricch & Tyga (Official Video) [Em1uK7KKc6o].mp3",
+    cover: "wow.jpg"
+  },
+  {
+    title: "What's Poppin",
+    artist: "Jack Harlow",
+    album: "Sweet Action",
+    genre: "Hip-Hop",
+    year: "2020",
+    src: "whats_poppin.mp3",
+    cover: "whats_poppin.jpg"
+  }
+];
+
+
+    let index = 0;
+
+    // ELEMENTS
+    const music = document.getElementById("music");
+    const title = document.getElementById("title");
+    const artist = document.getElementById("artist");
+    const album = document.getElementById("album");
+    const genre = document.getElementById("genre");
+    const year = document.getElementById("year");
+    const volSlide = document.getElementById("vol");
+const cover = document.getElementById("cover");
+
+function loadFirstSong() {
+  const song = songs[0];
+  music.src = song.src;
+  title.textContent = song.title;
+  artist.textContent = song.artist;
+  album.textContent = song.album;
+  genre.textContent = song.genre;
+  year.textContent = song.year;
+  cover.src = song.cover; // if you added cover
+}
+function loadSong(i) {
+  const song = songs[i];
+  music.src = song.src;
+  title.textContent = song.title;
+  artist.textContent = song.artist;
+  album.textContent = song.album;
+  genre.textContent = song.genre;
+  year.textContent = song.year;
+  cover.src = song.cover;
+  music.play();
+}
+
+
+    document.getElementById("play").addEventListener("click", function() {
+      if (music.paused) {
+        music.play();
+        this.textContent = "Pause";
+      } else {
+        music.pause();
+        this.textContent = "Play";
+      }
+    });
+
+    document.getElementById("mute").addEventListener("click", function() {
+      music.muted = !music.muted;
+    });
+
+    document.getElementById("next").addEventListener("click", function() {
+      index = (index + 1) % songs.length;
+      loadSong(index);
+    });
+
+    document.getElementById("prev").addEventListener("click", function() {
+      index = (index - 1 + songs.length) % songs.length;
+      loadSong(index);
+    });
+
+    music.volume = 0.2;
+    volSlide.addEventListener("input", () => {
+      music.volume = volSlide.value / 100;
+    });
+
+    // Load the first song on page open
+    loadFirstSong();
+  </script>
+</body>
+</html>

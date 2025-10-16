@@ -1,0 +1,121 @@
+body{
+    background-color: skyblue;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+#clock{
+    font-style: oblique;
+    font-size: 50px;
+    text-align: end;
+}
+.banner{
+    text-align: center;
+    color: antiquewhite;
+    background-color: rgb(3, 3, 58);
+    height: 220px;
+    align-items: center;
+    padding-top: 50px;
+    margin-top: 5%;
+    font-size: 50px;
+}
+#nav{
+    list-style-type: none;
+    display: flex;  
+    margin: 0;
+    padding: 0;
+    background-color: rgb(3, 3, 58);
+}
+#nav li a{
+    text-decoration: none;
+    color: white;
+    padding: 12px;
+    display: block;
+}
+#nav li a:hover {
+    background-color: midnightblue;
+    
+}
+#vid{
+    margin-top: 2%;
+    margin-left: 20%;
+}
+.prevbtn,.nextbtn{
+    flex-direction: column-reverse;
+}
+h3{
+    text-decoration: underline;
+}
+#slideshow {
+  width: 600px;
+  height: 340px;
+  margin: 30px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+#slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+}
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    #vid {
+        width: 80%;
+        height: auto;
+    }
+    #prevbtn, #nextbtn {
+        font-size: 2.5em;
+    }
+    .banner {
+        font-size: 40px;
+        height: 180px;
+    }
+    #clock {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    #vid {
+        width: 90%;
+        height: auto;
+    }
+    #prevbtn, #nextbtn {
+        font-size: 2em;
+    }
+    .banner {
+        font-size: 30px;
+        height: 150px;
+    }
+    #clock {
+        font-size: 30px;
+        text-align: center;
+    }
+    #nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #vid {
+        width: 100%;
+        height: auto;
+    }
+    #prevbtn, #nextbtn {
+        font-size: 1.5em;
+    }
+    .banner {
+        font-size: 24px;
+        height: 120px;
+    }
+    #clock {
+        font-size: 24px;
+    }
+}
+

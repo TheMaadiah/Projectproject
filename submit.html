@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transient Theatre</title>
+  <link rel="stylesheet" href="theatre.css">
+  <link rel="shortcut icon" href="transient.png">
+</head>
+<body>
+  <h2>Submit a Song or a Movie</h2>
+
+    <ul id="nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="movie.html">Movies</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="submit.html">Submit</a></li>
+    </ul>
+  <form action="thankyou.html">
+    <p><b>Choose what you want to submit:</b></p>
+    <input type="radio" id="song" name="type" value="song" required>
+    <label for="song">Song</label><br>
+    <input type="radio" id="movie" name="type" value="movie">
+    <label for="movie">Movie</label><br><br>
+
+    <!-- Song fields -->
+    <div id="songFields">
+      <label for="songTitle">Song Title:</label>
+      <input type="text" id="songTitle" name="songTitle" placeholder="Enter song title"><br><br>
+
+      <label for="artist">Artist:</label>
+      <input type="text" id="artist" name="artist" placeholder="Enter artist name"><br><br>
+
+      <label for="album">Album:</label>
+      <input type="text" id="album" name="album" placeholder="Enter album name"><br><br>
+    </div>
+
+    <!-- Movie fields -->
+    <div id="movieFields">
+      <label for="movieTitle">Movie Title:</label>
+      <input type="text" id="movieTitle" name="movieTitle" placeholder="Enter movie title"><br><br>
+
+      <label for="director">Director:</label>
+      <input type="text" id="director" name="director" placeholder="Enter director name"><br><br>
+
+      <label for="year">Year:</label>
+      <input type="number" id="year" name="year" placeholder="Enter year"><br><br>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Show/hide fields based on choice
+    const songRadio = document.getElementById("song");
+    const movieRadio = document.getElementById("movie");
+    const songFields = document.getElementById("songFields");
+    const movieFields = document.getElementById("movieFields");
+
+    function updateFields() {
+      if (songRadio.checked) {
+        songFields.style.display = "block";
+        movieFields.style.display = "none";
+      } else if (movieRadio.checked) {
+        songFields.style.display = "none";
+        movieFields.style.display = "block";
+      } else {
+        songFields.style.display = "none";
+        movieFields.style.display = "none";
+      }
+    }
+
+    songRadio.addEventListener("change", updateFields);
+    movieRadio.addEventListener("change", updateFields);
+
+    // Initialize fields hidden
+    updateFields();
+  </script>
+</body>
+</html>
